@@ -40,9 +40,9 @@ function renderBlock(block: string, key: number): React.ReactNode {
   if (heading) {
     const level = heading[1]!.length;
     const text = heading[2]!;
-    if (level === 1) return <h1 key={key}>{renderInline(text)}</h1>;
-    if (level === 2) return <h2 key={key}>{renderInline(text)}</h2>;
-    return <h3 key={key}>{renderInline(text)}</h3>;
+    if (level === 1) return <h1 key={key} data-role="heading">{renderInline(text)}</h1>;
+    if (level === 2) return <h2 key={key} data-role="heading-2">{renderInline(text)}</h2>;
+    return <h3 key={key} data-role="heading-3">{renderInline(text)}</h3>;
   }
   const lines = trimmed.split("\n");
   return (

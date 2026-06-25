@@ -134,7 +134,7 @@ export const Carousel: React.FC<CarouselProps> = ({
         canScrollNext: loop || canScrollNext,
         containerRef,
         registerSlideCount,
-      }}
+      }} data-nocms-component="carousel"
     >
       <div
         data-nocms-component="carousel"
@@ -227,7 +227,7 @@ export function CarouselPrevious({
       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <polyline points="15 18 9 12 15 6" />
       </svg>
-      <span className="sr-only">Previous slide</span>
+      <span className="sr-only" data-role="text">Previous slide</span>
     </button>
   );
 }
@@ -259,7 +259,7 @@ export function CarouselNext({
       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <polyline points="9 18 15 12 9 6" />
       </svg>
-      <span className="sr-only">Next slide</span>
+      <span className="sr-only" data-role="text-2">Next slide</span>
     </button>
   );
 }

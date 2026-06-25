@@ -94,7 +94,7 @@ export function FacilityHours({
         className={className}
         aria-label="Facility hours"
       >
-        <p className="text-muted">Hours information is not available at this time.</p>
+        <p className="text-muted" data-role="text">Hours information is not available at this time.</p>
       </section>
     );
   }

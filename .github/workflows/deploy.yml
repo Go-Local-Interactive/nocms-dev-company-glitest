@@ -21,11 +21,17 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Build
+        # SITE_URL is baked into the static export at build time — the NTS SEO
+        # layer reads it for canonical/OG absolute URLs. CF Pages only serves the
+        # prebuilt out/ (no CF-side build), so this Build step is the single
+        # prod build-time origin; the *.pages.dev URL matches project.publishedUrl.
         run: bun run build
+        env:
+          SITE_URL: https://nocms-dev-company-glitest-9c9263da.pages.dev
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy out --project-name=NOCMS_PROJECT_NAME
+          command: pages deploy out --project-name=nocms-dev-company-glitest-9c9263da

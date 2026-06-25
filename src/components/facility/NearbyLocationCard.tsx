@@ -57,7 +57,7 @@ export function NearbyLocationCard({
             src={imageSrc}
             alt={imageAlt ?? `${facility.name} exterior`}
             loading="lazy"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover" data-role="media"
           />
         ) : (
           <div

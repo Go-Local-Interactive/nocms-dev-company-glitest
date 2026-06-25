@@ -57,7 +57,7 @@ function CardTitle({ className = "", ...props }: React.HTMLAttributes<HTMLHeadin
   return (
     <h3
       className={`font-heading text-xl font-bold text-text leading-tight ${className}`}
-      {...props}
+      {...props} data-role="heading"
     />
   );
 }
@@ -87,7 +87,7 @@ function CardImage({ className = "", src, alt, loading = "lazy", ...props }: Car
         alt={alt}
         loading={loading}
         className={`w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500 ${className}`}
-        {...props}
+        {...props} data-role="media"
       />
     </div>
   );

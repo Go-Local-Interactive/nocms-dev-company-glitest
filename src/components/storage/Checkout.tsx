@@ -185,7 +185,7 @@ function Field({
     <div>
       <label htmlFor={id} className="block text-sm font-semibold text-text mb-1">
         {label}
-        {required && <span className="text-primary"> *</span>}
+        {required && <span className="text-primary" data-role="text"> *</span>}
       </label>
       <input
         id={id}

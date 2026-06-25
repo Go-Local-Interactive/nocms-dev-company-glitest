@@ -1,0 +1,46 @@
+{
+  "colors": {
+    "primary": "#1400ff",
+    "secondary": "#6f6f6f",
+    "accent": "#000000",
+    "background": "#ffffff",
+    "surface": "#fafafa",
+    "text": "#000000",
+    "muted": "#7c7c7c"
+  },
+  "typography": {
+    "headingFont": "Proxima Nova",
+    "bodyFont": "Proxima Nova",
+    "monoFont": "JetBrains Mono",
+    "scale": "default"
+  },
+  "spacing": "default",
+  "borderRadius": "md",
+  "shadows": "subtle",
+  "mood": "Clean, trustworthy, mainstream storage template — the safe-default look that lets the atomic-blocks system shine without competing for attention",
+  "motionStyle": "subtle",
+  "layoutStyle": "atomic-stacked",
+  "designRules": [
+    "IDENTITY: Manrope headings at confident scale (4xl-6xl). Deep navy primary, warm amber accent reserved for CTAs and price callouts. Warm off-white ground (#F7F8FA) — no pure white sections.",
+    "ATOMIC BLOCKS: This template renders Payload pages composed entirely of atomic blocks (hero, features-grid, rental-steps, storage-resources, testimonial, blog-archive, search-callout, etc.). Visual design lives in the template; structure lives in Payload; AI tweaks per-block styling via direct file edits.",
+    "LAYOUT: Vertical stack of full-bleed sections with consistent padding (py-20 px-6 sm:px-10 lg:px-16). Inner content max-width 7xl. Section backgrounds alternate background → surface → background for visual rhythm.",
+    "CONVERSION: Sticky nav with amber Reserve CTA. Search callout on every home page. Hero CTAs always visible above fold. Each unit/feature card has a clear primary action."
+  ],
+  "designPatterns": {
+    "card": "<div className=\"bg-surface rounded-xl p-6 border border-text/10 shadow-sm hover:shadow-md transition-all\">",
+    "button": "<a className=\"inline-flex items-center justify-center gap-2 bg-accent text-text font-semibold px-8 py-4 rounded-md text-base shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all\">",
+    "buttonSecondary": "<a className=\"inline-flex items-center justify-center gap-2 bg-surface text-primary font-semibold px-8 py-4 rounded-md text-base border-2 border-primary hover:bg-primary hover:text-surface transition-all\">",
+    "heading": "<h2 className=\"font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-text tracking-tight\" style=\"text-wrap: balance\">",
+    "subheading": "<p className=\"font-body text-lg text-text-muted leading-relaxed max-w-2xl\">",
+    "badge": "<span className=\"inline-flex items-center gap-1.5 bg-accent/10 text-accent rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider\">",
+    "input": "<input className=\"w-full bg-surface border border-text/15 rounded-md px-4 py-3 text-text placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary transition\" />",
+    "sectionBg": "bg-background",
+    "sectionAltBg": "bg-surface",
+    "sectionDarkBg": "bg-primary text-white",
+    "navStyle": "sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-text/10 shadow-sm",
+    "footerStyle": "bg-primary text-white border-t-4 border-accent",
+    "navButton": "<a className=\"inline-flex items-center bg-accent text-text font-bold px-5 py-2.5 rounded-md text-sm hover:opacity-90 transition\">",
+    "iconBox": "<div className=\"h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary\">",
+    "divider": "<div className=\"h-px w-full bg-text/10\" aria-hidden=\"true\" />"
+  }
+}

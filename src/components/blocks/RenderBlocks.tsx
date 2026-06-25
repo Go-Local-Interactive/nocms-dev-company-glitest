@@ -42,7 +42,7 @@ export function RenderBlocks({
           blockName: block.blockName ?? null,
         });
         return (
-          <div key={block.id ?? i} {...attrs}>
+          <div key={block.id ?? i} {...attrs} data-nocms-component="render-blocks">
             <Component {...block} />
           </div>
         );

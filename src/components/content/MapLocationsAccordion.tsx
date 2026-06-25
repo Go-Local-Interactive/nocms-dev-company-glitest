@@ -75,13 +75,13 @@ export function MapLocationsAccordion({
           >
             {heading}
           </h2>
-          {intro && <p className="mt-3 text-muted text-lg">{intro}</p>}
+          {intro && <p className="mt-3 text-muted text-lg" data-role="subheading">{intro}</p>}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* TODO: replace with the Google HybridMap port once GoogleMap utilities land. */}
           <div className="aspect-[4/3] lg:aspect-auto bg-surface rounded-xl border border-text/5 flex items-center justify-center text-muted">
-            <span>Map view</span>
+            <span data-role="text">Map view</span>
           </div>
 
           <div className={accordionClass}>

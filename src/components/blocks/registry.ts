@@ -12,6 +12,7 @@ import { StorageResourcesBlock } from "./StorageResourcesBlock";
 import { TestimonialBlock } from "./TestimonialBlock";
 import { BlogArchiveBlock } from "./BlogArchiveBlock";
 import { SearchCalloutBlock } from "./SearchCalloutBlock";
+import { MapLocationsBlock } from "./MapLocationsBlock";
 
 import {
   BannerBlock,
@@ -31,7 +32,6 @@ import {
   SizeGuidePreviewBlock,
   StorageTypesBlock,
   FeaturedLocationsBlock,
-  MapLocationsBlock,
   SearchFormBlock,
   SpacerBlock,
 } from "./Baseline";

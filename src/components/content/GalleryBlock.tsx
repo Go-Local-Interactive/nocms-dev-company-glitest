@@ -66,7 +66,7 @@ export function GalleryBlock({
                 alt={img.alt ?? `Gallery image ${i + 1} of ${count}`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                className="object-cover"
+                className="object-cover" data-role="media"
               />
             </li>
           ))}

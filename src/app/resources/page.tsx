@@ -76,13 +76,13 @@ export default async function ResourcesPage() {
                 <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
                   <card.icon className="h-6 w-6 text-primary" aria-hidden="true" />
                 </div>
-                <h2 className="font-heading text-xl font-bold text-text mb-2 group-hover:text-primary transition-colors">
+                <h2 className="font-heading text-xl font-bold text-text mb-2 group-hover:text-primary transition-colors" data-role="heading-2">
                   {card.title}
                 </h2>
-                <p className="text-muted text-sm leading-relaxed mb-4">
+                <p className="text-muted text-sm leading-relaxed mb-4" data-role="subheading-2">
                   {card.description}
                 </p>
-                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-3 transition-all" data-role="text">
                   Open
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </span>

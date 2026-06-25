@@ -58,7 +58,7 @@ export default async function RentOnlinePage() {
         className="py-16 lg:py-20 bg-surface"
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl font-bold text-text text-center mb-10">
+          <h2 className="font-heading text-3xl font-bold text-text text-center mb-10" data-role="heading-2">
             Pick a location
           </h2>
           <FacilityCards facilities={facilities} />

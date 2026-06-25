@@ -29,7 +29,7 @@ export function BlogFeaturedArticle({
       className="py-12 lg:py-16"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 className="sr-only">Featured Article</h2>
+        <h2 className="sr-only" data-role="heading">Featured Article</h2>
         <BlogCard
           post={post}
           baseSlug={baseSlug}

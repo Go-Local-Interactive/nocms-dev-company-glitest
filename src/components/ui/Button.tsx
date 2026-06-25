@@ -102,7 +102,7 @@ export const Button: React.FC<ButtonProps> = ({
         className={classes}
         {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
       >
-        {isLoading && <span className="sr-only">Loading...</span>}
+        {isLoading && <span className="sr-only" data-role="text">Loading...</span>}
         {children}
       </a>
     );
@@ -117,7 +117,7 @@ export const Button: React.FC<ButtonProps> = ({
       disabled={isLoading || (props as React.ButtonHTMLAttributes<HTMLButtonElement>).disabled}
       {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
     >
-      {isLoading && <span className="sr-only">Loading...</span>}
+      {isLoading && <span className="sr-only" data-role="text-2">Loading...</span>}
       {children}
     </button>
   );

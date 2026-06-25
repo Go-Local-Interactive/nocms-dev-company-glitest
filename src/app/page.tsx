@@ -36,7 +36,7 @@ export default async function HomePage() {
             >
               {page.title}
             </h1>
-            <p className="mt-4 text-muted">
+            <p className="mt-4 text-muted" data-role="text">
               This page has no blocks yet. Add a block in the CMS to fill it in.
             </p>
           </div>

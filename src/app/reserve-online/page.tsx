@@ -48,7 +48,7 @@ export default async function ReserveOnlinePage() {
         className="py-16 lg:py-20 bg-background"
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl font-bold text-text text-center mb-10">
+          <h2 className="font-heading text-3xl font-bold text-text text-center mb-10" data-role="heading-2">
             Pick a location to reserve
           </h2>
           <FacilityCards facilities={facilities} />

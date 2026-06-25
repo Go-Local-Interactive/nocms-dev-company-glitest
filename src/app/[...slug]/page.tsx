@@ -190,8 +190,8 @@ export default async function CatchAllPage({ params }: Props) {
   if (slug[0] === "_placeholder") {
     return (
       <main className="mx-auto max-w-2xl px-6 py-16">
-        <h1 className="text-3xl font-semibold tracking-tight">Page</h1>
-        <p className="mt-4 text-zinc-600">Create a page in the CMS to publish it here.</p>
+        <h1 className="text-3xl font-semibold tracking-tight" data-role="heading">Page</h1>
+        <p className="mt-4 text-zinc-600" data-role="text">Create a page in the CMS to publish it here.</p>
       </main>
     );
   }
@@ -213,12 +213,12 @@ export default async function CatchAllPage({ params }: Props) {
         const allLocations = await fetchAllLocations();
         return (
           <>
-            <PageDocument page={resolved.page} />
+            <PageDocument page={resolved.page} locationsIndexSlug={indexSlug ?? undefined} />
             <AllLocationsIndex allLocations={allLocations} />
           </>
         );
       }
-      return <PageDocument page={resolved.page} />;
+      return <PageDocument page={resolved.page} locationsIndexSlug={indexSlug ?? undefined} />;
     }
     case "location": {
       const loc = resolved.location;

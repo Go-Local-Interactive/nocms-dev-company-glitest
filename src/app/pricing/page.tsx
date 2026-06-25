@@ -46,10 +46,10 @@ export default async function PricingPage() {
 
       <section className="py-16 lg:py-20 bg-background">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl font-bold text-text text-center mb-4">
+          <h2 className="font-heading text-3xl font-bold text-text text-center mb-4" data-role="heading-2">
             Sizes and starting prices
           </h2>
-          <p className="text-muted text-center max-w-2xl mx-auto mb-12">
+          <p className="text-muted text-center max-w-2xl mx-auto mb-12" data-role="subheading-2">
             Starting prices vary by location and availability. Reserve online to lock in
             today&apos;s rate at the location nearest you.
           </p>
@@ -60,27 +60,27 @@ export default async function PricingPage() {
                 className="bg-surface rounded-xl border border-text/10 p-6 flex flex-col"
               >
                 <div className="flex items-baseline justify-between gap-3 mb-2">
-                  <h3 className="font-heading text-2xl font-bold text-text">
+                  <h3 className="font-heading text-2xl font-bold text-text" data-role="heading-3">
                     {size.name}
                   </h3>
-                  <span className="text-xs font-semibold uppercase tracking-wide text-muted">
+                  <span className="text-xs font-semibold uppercase tracking-wide text-muted" data-role="text">
                     {size.sqft} sq ft
                   </span>
                 </div>
                 <p className="text-sm text-muted mb-4">{size.comparison}</p>
-                <p className="text-sm text-text leading-relaxed mb-6">
+                <p className="text-sm text-text leading-relaxed mb-6" data-role="subheading-3">
                   {size.description}
                 </p>
                 {size.startingPrice && (
                   <p className="mb-4">
-                    <span className="text-xs font-semibold uppercase tracking-wide text-muted">
+                    <span className="text-xs font-semibold uppercase tracking-wide text-muted" data-role="text-2">
                       Starting at
                     </span>
                     <br />
-                    <span className="font-heading text-3xl font-bold text-primary">
+                    <span className="font-heading text-3xl font-bold text-primary" data-role="text-3">
                       ${size.startingPrice}
                     </span>
-                    <span className="text-sm text-muted"> / mo</span>
+                    <span className="text-sm text-muted" data-role="text-4"> / mo</span>
                   </p>
                 )}
                 <ul className="text-sm text-text space-y-1 mb-6">
@@ -93,7 +93,7 @@ export default async function PricingPage() {
                 </ul>
                 <a
                   href="/reserve-online"
-                  className="mt-auto inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-5 py-2.5 rounded-md hover:opacity-90 transition-opacity"
+                  className="mt-auto inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-5 py-2.5 rounded-md hover:opacity-90 transition-opacity" data-role="cta"
                 >
                   Reserve a {size.name}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -106,14 +106,14 @@ export default async function PricingPage() {
 
       <section className="py-12 lg:py-16 bg-surface">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-2xl font-bold text-text mb-4">
+          <h2 className="font-heading text-2xl font-bold text-text mb-4" data-role="heading-4">
             What&apos;s included
           </h2>
           <ul className="text-text leading-relaxed space-y-2">
-            <li>Month-to-month rentals — cancel any time with 10 days&apos; notice.</li>
-            <li>24/7 surveillance and gated access at every location.</li>
-            <li>Online bill pay, autopay, and account access.</li>
-            <li>No setup or admin fees beyond the first month and a small lock fee.</li>
+            <li data-role="text-5">Month-to-month rentals — cancel any time with 10 days&apos; notice.</li>
+            <li data-role="text-6">24/7 surveillance and gated access at every location.</li>
+            <li data-role="text-7">Online bill pay, autopay, and account access.</li>
+            <li data-role="text-8">No setup or admin fees beyond the first month and a small lock fee.</li>
           </ul>
         </div>
       </section>

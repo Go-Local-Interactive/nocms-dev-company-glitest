@@ -47,7 +47,7 @@ export default async function ContactPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             <div>
-              <h2 className="font-heading text-2xl font-bold text-text mb-8">
+              <h2 className="font-heading text-2xl font-bold text-text mb-8" data-role="heading-2">
                 Get in touch
               </h2>
               <div className="space-y-6">
@@ -57,7 +57,7 @@ export default async function ContactPage() {
                       <Phone className="h-5 w-5 text-primary" aria-hidden="true" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-text">Phone</h3>
+                      <h3 className="font-semibold text-text" data-role="heading-3">Phone</h3>
                       <a
                         href={`tel:${skinConfig.contactPhone.replace(/[^\d+]/g, "")}`}
                         className="text-primary hover:underline"
@@ -73,7 +73,7 @@ export default async function ContactPage() {
                       <Mail className="h-5 w-5 text-primary" aria-hidden="true" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-text">Email</h3>
+                      <h3 className="font-semibold text-text" data-role="heading-4">Email</h3>
                       <a
                         href={`mailto:${skinConfig.contactEmail}`}
                         className="text-primary hover:underline"
@@ -89,8 +89,8 @@ export default async function ContactPage() {
                       <MapPin className="h-5 w-5 text-primary" aria-hidden="true" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-text">Office</h3>
-                      <p className="text-muted">
+                      <h3 className="font-semibold text-text" data-role="heading-5">Office</h3>
+                      <p className="text-muted" data-role="text">
                         {skinConfig.primaryAddress.line1}, {skinConfig.primaryAddress.city},{" "}
                         {skinConfig.primaryAddress.state} {skinConfig.primaryAddress.zip}
                       </p>
@@ -102,11 +102,11 @@ export default async function ContactPage() {
                     <Clock className="h-5 w-5 text-primary" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text">Office hours</h3>
-                    <p className="text-muted">Mon–Fri: 9:00 AM – 6:00 PM</p>
-                    <p className="text-muted">Saturday: 9:00 AM – 5:00 PM</p>
-                    <p className="text-muted">Sunday: 10:00 AM – 4:00 PM</p>
-                    <p className="text-muted text-sm mt-1">
+                    <h3 className="font-semibold text-text" data-role="heading-6">Office hours</h3>
+                    <p className="text-muted" data-role="text-2">Mon–Fri: 9:00 AM – 6:00 PM</p>
+                    <p className="text-muted" data-role="text-3">Saturday: 9:00 AM – 5:00 PM</p>
+                    <p className="text-muted" data-role="text-4">Sunday: 10:00 AM – 4:00 PM</p>
+                    <p className="text-muted text-sm mt-1" data-role="text-5">
                       Gate access available outside office hours at most facilities.
                     </p>
                   </div>

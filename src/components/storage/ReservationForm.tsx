@@ -122,10 +122,10 @@ export function ReservationForm({ facilityUuid, unitGroupUuid }: ReservationForm
     return (
       <div data-nocms-component="reservation-form" role="status" aria-live="polite" className="rounded-xl border border-emerald-200 bg-emerald-50 p-6">
         <h2 className="text-xl font-semibold text-emerald-900" data-role="heading">Reservation confirmed</h2>
-        <p className="mt-2 text-sm text-emerald-800">
+        <p className="mt-2 text-sm text-emerald-800" data-role="text">
           We&apos;ve held your unit. We&apos;ve also emailed you a confirmation; bring it on move-in day.
         </p>
-        <p className="mt-3 text-xs text-emerald-700">
+        <p className="mt-3 text-xs text-emerald-700" data-role="text-2">
           Reference ID: <code className="font-mono">{status.leadUuid}</code>
         </p>
       </div>
@@ -141,8 +141,8 @@ export function ReservationForm({ facilityUuid, unitGroupUuid }: ReservationForm
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
-            <label htmlFor="firstName" className="block text-sm font-medium">
-              First name <span aria-hidden="true">*</span>
+            <label htmlFor="firstName" className="block text-sm font-medium" data-role="text-3">
+              First name <span aria-hidden="true" data-role="text-4">*</span>
             </label>
             <input
               id="firstName"
@@ -157,8 +157,8 @@ export function ReservationForm({ facilityUuid, unitGroupUuid }: ReservationForm
             />
           </div>
           <div>
-            <label htmlFor="lastName" className="block text-sm font-medium">
-              Last name <span aria-hidden="true">*</span>
+            <label htmlFor="lastName" className="block text-sm font-medium" data-role="text-5">
+              Last name <span aria-hidden="true" data-role="text-6">*</span>
             </label>
             <input
               id="lastName"
@@ -175,8 +175,8 @@ export function ReservationForm({ facilityUuid, unitGroupUuid }: ReservationForm
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium">
-            Email <span aria-hidden="true">*</span>
+          <label htmlFor="email" className="block text-sm font-medium" data-role="text-7">
+            Email <span aria-hidden="true" data-role="text-8">*</span>
           </label>
           <input
             id="email"
@@ -192,7 +192,7 @@ export function ReservationForm({ facilityUuid, unitGroupUuid }: ReservationForm
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium">
+          <label htmlFor="phone" className="block text-sm font-medium" data-role="text-9">
             Phone
           </label>
           <input
@@ -209,7 +209,7 @@ export function ReservationForm({ facilityUuid, unitGroupUuid }: ReservationForm
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <div>
-            <label htmlFor="state" className="block text-sm font-medium">State</label>
+            <label htmlFor="state" className="block text-sm font-medium" data-role="text-10">State</label>
             <input
               id="state"
               name="state"
@@ -222,7 +222,7 @@ export function ReservationForm({ facilityUuid, unitGroupUuid }: ReservationForm
             />
           </div>
           <div>
-            <label htmlFor="country" className="block text-sm font-medium">Country</label>
+            <label htmlFor="country" className="block text-sm font-medium" data-role="text-11">Country</label>
             <select
               id="country"
               name="country"
@@ -237,7 +237,7 @@ export function ReservationForm({ facilityUuid, unitGroupUuid }: ReservationForm
             </select>
           </div>
           <div>
-            <label htmlFor="zip" className="block text-sm font-medium">Zip / Postal</label>
+            <label htmlFor="zip" className="block text-sm font-medium" data-role="text-12">Zip / Postal</label>
             <input
               id="zip"
               name="zip"
@@ -251,7 +251,7 @@ export function ReservationForm({ facilityUuid, unitGroupUuid }: ReservationForm
         </div>
 
         <div>
-          <label htmlFor="dateDesiredMoveIn" className="block text-sm font-medium">Desired move-in</label>
+          <label htmlFor="dateDesiredMoveIn" className="block text-sm font-medium" data-role="text-13">Desired move-in</label>
           <input
             id="dateDesiredMoveIn"
             name="dateDesiredMoveIn"
@@ -275,7 +275,7 @@ export function ReservationForm({ facilityUuid, unitGroupUuid }: ReservationForm
             onChange={(e) => setForm((f) => ({ ...f, isSmsEnrolled: e.target.checked }))}
             className="h-4 w-4 rounded border-zinc-300 focus-visible:ring-2 focus-visible:ring-zinc-900"
           />
-          <span>Text me move-in reminders</span>
+          <span data-role="text-14">Text me move-in reminders</span>
         </label>
       </fieldset>
 

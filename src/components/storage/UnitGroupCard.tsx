@@ -46,12 +46,12 @@ export function UnitGroupCard({ group, reserveHref }: UnitGroupCardProps) {
       <h3 className="text-2xl font-semibold tracking-tight" data-role="heading">
         {group.unitGroupDepth} × {group.unitGroupWidth}
       </h3>
-      <p className="mt-1 text-sm text-zinc-600">
+      <p className="mt-1 text-sm text-zinc-600" data-role="text">
         {group.unitType} — {group.description}
       </p>
       <div className="mt-4 flex items-baseline gap-2">
         <span className="text-2xl font-semibold">{formatRate(group.currentWebRate)}</span>
-        <span className="text-sm text-zinc-500">/ mo</span>
+        <span className="text-sm text-zinc-500" data-role="text-2">/ mo</span>
         {showStrike && (
           <span className="text-sm text-zinc-400 line-through">
             {formatRate(group.currentStreetRate as number)}
@@ -59,7 +59,7 @@ export function UnitGroupCard({ group, reserveHref }: UnitGroupCardProps) {
         )}
       </div>
       {scarcity && (
-        <p className="mt-2 text-sm font-medium text-amber-700">
+        <p className="mt-2 text-sm font-medium text-amber-700" data-role="text-3">
           Only {group.availableUnitCount} left!
         </p>
       )}

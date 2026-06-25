@@ -58,7 +58,7 @@ export function Address({
         </span>
       )}
       {city && state && (
-        <span>
+        <span data-role="text">
           {city}, {state} {zip}
         </span>
       )}

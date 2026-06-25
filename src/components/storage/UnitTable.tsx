@@ -48,7 +48,7 @@ export function UnitTable({
           {heading}
         </h2>
         {units.length === 0 ? (
-          <p className="text-zinc-600">
+          <p className="text-zinc-600" data-role="text">
             No units currently available. Please check back soon.
           </p>
         ) : (
@@ -56,21 +56,21 @@ export function UnitTable({
             <table className="w-full text-left text-sm">
               <thead className="bg-zinc-50 text-text">
                 <tr>
-                  <th scope="col" className="px-4 py-3 font-semibold">
+                  <th scope="col" className="px-4 py-3 font-semibold" data-role="text-2">
                     Size
                   </th>
                   {showDimensions && (
-                    <th scope="col" className="px-4 py-3 font-semibold">
+                    <th scope="col" className="px-4 py-3 font-semibold" data-role="text-3">
                       Dimensions
                     </th>
                   )}
-                  <th scope="col" className="px-4 py-3 font-semibold">
+                  <th scope="col" className="px-4 py-3 font-semibold" data-role="text-4">
                     Type
                   </th>
-                  <th scope="col" className="px-4 py-3 font-semibold">
+                  <th scope="col" className="px-4 py-3 font-semibold" data-role="text-5">
                     Price
                   </th>
-                  <th scope="col" className="px-4 py-3 font-semibold text-right">
+                  <th scope="col" className="px-4 py-3 font-semibold text-right" data-role="text-6">
                     Action
                   </th>
                 </tr>
@@ -87,9 +87,9 @@ export function UnitTable({
                       key={u.unitGroupUuid}
                       className="border-t border-zinc-200 hover:bg-zinc-50/60"
                     >
-                      <td className="px-4 py-3 font-medium">{sqft} sq ft</td>
+                      <td className="px-4 py-3 font-medium" data-role="text-7">{sqft} sq ft</td>
                       {showDimensions && (
-                        <td className="px-4 py-3 text-zinc-600">
+                        <td className="px-4 py-3 text-zinc-600" data-role="text-8">
                           {u.unitGroupDepth}&apos; &times; {u.unitGroupWidth}&apos;
                         </td>
                       )}
@@ -101,7 +101,7 @@ export function UnitTable({
                         <span className="font-semibold">
                           {formatRate(u.currentWebRate)}
                         </span>
-                        <span className="text-zinc-500"> /mo</span>
+                        <span className="text-zinc-500" data-role="text-9"> /mo</span>
                         {showStrike && (
                           <span className="ml-2 text-xs text-zinc-400 line-through">
                             {formatRate(u.currentStreetRate as number)}
@@ -110,11 +110,11 @@ export function UnitTable({
                       </td>
                       <td className="px-4 py-3 text-right">
                         {soldOut ? (
-                          <span className="text-zinc-400">Sold out</span>
+                          <span className="text-zinc-400" data-role="text-10">Sold out</span>
                         ) : (
                           <a
                             href={`${reserveHrefBase}/${u.unitGroupUuid}`}
-                            className="inline-block bg-primary text-white px-3 py-2 rounded-md font-semibold text-xs hover:opacity-90"
+                            className="inline-block bg-primary text-white px-3 py-2 rounded-md font-semibold text-xs hover:opacity-90" data-role="cta"
                           >
                             Reserve
                           </a>

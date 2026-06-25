@@ -52,7 +52,7 @@ export function Breadcrumbs({
         {middle.length > 0 && (
           <li className="md:hidden flex items-center gap-1" aria-hidden="true">
             <ChevronRight className="h-3.5 w-3.5 opacity-60" />
-            <span>...</span>
+            <span data-role="text">...</span>
           </li>
         )}
 

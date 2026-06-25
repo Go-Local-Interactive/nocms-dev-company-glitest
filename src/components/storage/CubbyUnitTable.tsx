@@ -46,7 +46,7 @@ export function CubbyUnitTable({
           {heading}
         </h2>
         {units.length === 0 ? (
-          <p className="text-zinc-600">No units available right now.</p>
+          <p className="text-zinc-600" data-role="text">No units available right now.</p>
         ) : (
           <ul className={containerClass}>
             {units.map((u) => {
@@ -58,21 +58,21 @@ export function CubbyUnitTable({
                   className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm flex items-center justify-between gap-4"
                 >
                   <div>
-                    <p className="font-semibold text-text">{sqft} sq ft</p>
-                    <p className="text-sm text-zinc-600">
+                    <p className="font-semibold text-text" data-role="text-2">{sqft} sq ft</p>
+                    <p className="text-sm text-zinc-600" data-role="text-3">
                       {u.unitGroupDepth}&apos; &times; {u.unitGroupWidth}&apos; — {u.unitType}
                     </p>
                     <p className="mt-1 font-bold text-primary">
                       {formatRate(u.currentWebRate)}
-                      <span className="text-zinc-500 font-normal text-sm"> /mo</span>
+                      <span className="text-zinc-500 font-normal text-sm" data-role="text-4"> /mo</span>
                     </p>
                   </div>
                   {soldOut ? (
-                    <span className="text-sm text-zinc-400">Sold out</span>
+                    <span className="text-sm text-zinc-400" data-role="text-5">Sold out</span>
                   ) : (
                     <a
                       href={`${reserveHrefBase}/${u.unitGroupUuid}`}
-                      className="inline-block bg-primary text-white px-4 py-2 rounded-md font-semibold text-sm hover:opacity-90"
+                      className="inline-block bg-primary text-white px-4 py-2 rounded-md font-semibold text-sm hover:opacity-90" data-role="cta"
                     >
                       Reserve
                     </a>

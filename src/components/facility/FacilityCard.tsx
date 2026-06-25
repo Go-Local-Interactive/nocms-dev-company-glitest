@@ -67,7 +67,7 @@ export function FacilityCard({
             src={imageSrc}
             alt={imageAlt ?? `${facility.name} exterior`}
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-role="media"
           />
         ) : (
           <div
@@ -125,7 +125,7 @@ export function FacilityCard({
             className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             {ctaLabel}
-            <span aria-hidden="true">&rarr;</span>
+            <span aria-hidden="true" data-role="text">&rarr;</span>
           </Link>
         </div>
       </div>

@@ -84,23 +84,23 @@ export default async function AboutPage() {
 
       <section className="py-16 lg:py-20 bg-background">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-text mb-6">
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-text mb-6" data-role="heading-2">
             Our story
           </h2>
           <div className="text-lg text-muted leading-relaxed space-y-5 text-left">
-            <p>
+            <p data-role="text">
               {skinConfig.brandName} started with a simple idea: most storage facilities are
               afterthoughts — converted warehouses, dim hallways, faceless leasing offices. We
               wanted something different. Purpose-built buildings with wide drive aisles, real
               climate control, and a manager who recognizes you.
             </p>
-            <p>
+            <p data-role="text-2">
               Today we serve hundreds of customers across the metro. Personal storage during a
               renovation, business inventory for a growing online shop, vehicle parking through the
               winter — whatever you&apos;re storing, we&apos;ve probably stored something like it
               before.
             </p>
-            <p>
+            <p data-role="text-3">
               We&apos;re locally owned, month-to-month by default, and we never charge fees for
               things that should be free. That&apos;s the whole pitch.
             </p>
@@ -110,7 +110,7 @@ export default async function AboutPage() {
 
       <section className="py-16 lg:py-20 bg-surface">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl font-bold text-text text-center mb-12">
+          <h2 className="font-heading text-3xl font-bold text-text text-center mb-12" data-role="heading-3">
             What sets us apart
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -122,10 +122,10 @@ export default async function AboutPage() {
                 <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
                   <value.icon className="h-7 w-7 text-primary" aria-hidden="true" />
                 </div>
-                <h3 className="font-heading text-lg font-bold text-text mb-2">
+                <h3 className="font-heading text-lg font-bold text-text mb-2" data-role="heading-4">
                   {value.title}
                 </h3>
-                <p className="text-muted text-sm leading-relaxed">{value.description}</p>
+                <p className="text-muted text-sm leading-relaxed" data-role="subheading-2">{value.description}</p>
               </div>
             ))}
           </div>

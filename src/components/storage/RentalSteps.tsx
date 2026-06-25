@@ -89,7 +89,7 @@ export function RentalSteps({
                   >
                     <Icon className="h-7 w-7" />
                   </div>
-                  <p className="text-sm font-semibold text-zinc-500 mb-2">
+                  <p className="text-sm font-semibold text-zinc-500 mb-2" data-role="text">
                     Step {stepNumber}
                   </p>
                   <p className="text-text font-medium">{step.text}</p>

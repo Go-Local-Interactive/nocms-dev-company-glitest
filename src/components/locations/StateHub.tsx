@@ -130,7 +130,7 @@ export async function StateHub({ location, allLocations, locationsIndexSlug }: S
                       {facilityCount > 0 && (
                         <span className="shrink-0 text-sm text-muted">
                           {facilityCount} {facilityCount === 1 ? "facility" : "facilities"}{" "}
-                          <span aria-hidden="true">&rarr;</span>
+                          <span aria-hidden="true" data-role="text-2">&rarr;</span>
                         </span>
                       )}
                     </AppLink>

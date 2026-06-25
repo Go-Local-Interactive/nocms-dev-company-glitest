@@ -29,7 +29,7 @@ export function BlogArchiveSidebar({
       aria-labelledby="sidebar-heading"
       className="w-full lg:w-72 lg:flex-shrink-0 space-y-6"
     >
-      <h2 id="sidebar-heading" className="sr-only">
+      <h2 id="sidebar-heading" className="sr-only" data-role="heading-2">
         Blog Sidebar
       </h2>
       <BlogSearch />
@@ -39,7 +39,7 @@ export function BlogArchiveSidebar({
           <section aria-labelledby="categories-heading">
             <h3
               id="categories-heading"
-              className="font-heading text-lg font-bold text-text mb-3"
+              className="font-heading text-lg font-bold text-text mb-3" data-role="heading-3"
             >
               Categories
             </h3>

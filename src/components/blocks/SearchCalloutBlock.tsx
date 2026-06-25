@@ -1,51 +1,45 @@
 import * as React from "react";
-import { Search, ArrowRight } from "lucide-react";
 import type { BlockProps } from "./types";
 import { lexicalToText } from "./Lexical";
 
-/** Search callout — full-width banner with a search input and primary CTA.
- *  title → heading, body (first paragraph) → subheading. */
+/** Search callout — legacy-faithful port of storage-theme-payload's
+ *  SearchCallout Layout 1 ("Find a Unit Right for You Today!").
+ *
+ *  Legacy is a RESTRAINED band, not a saturated primary fill: neutral page
+ *  background (`bg-background`), dark text, modest vertical padding
+ *  (`py-8 md:py-10 lg:py-12` → ~h172), a centered bold heading, and a single
+ *  primary CTA below it. There is NO search input form in legacy — it's a
+ *  call-to-action button — so we render the button, not a `/search` field.
+ *
+ *  title → centered heading; body (first paragraph) → CTA button label
+ *  (the migrated `buttonText`, e.g. "Rent or Reserve Now"). The button links
+ *  to `/search`, the in-template "find a unit" destination. */
 export function SearchCalloutBlock({ title, body }: BlockProps) {
-  const sub = lexicalToText(body);
+  const cta = lexicalToText(body);
   return (
-    <section data-nocms-component="search-callout" className="bg-primary text-white py-20 px-6 sm:px-10 lg:px-16">
-      <div className="max-w-4xl mx-auto text-center">
+    <section
+      data-nocms-component="search-callout"
+      className="bg-background text-text py-8 md:py-10 lg:py-12 px-6 sm:px-10 lg:px-16"
+    >
+      <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
         {title && (
           <h2
             data-payload-subfield="title"
-            className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6"
-            style={{ textWrap: "balance" } as React.CSSProperties}
+            className="font-heading text-2xl md:text-[2rem] font-bold leading-tight"
+            style={{ textWrap: "balance" } as React.CSSProperties} data-role="heading"
           >
             {title}
           </h2>
         )}
-        {sub && (
-          <p data-payload-subfield="body" className="font-body text-lg text-white/90 mb-10">
-            {sub}
-          </p>
-        )}
-        <form action="/search" method="get" className="flex flex-col sm:flex-row items-stretch gap-3 max-w-2xl mx-auto">
-          <label htmlFor="search-callout-input" className="sr-only">
-            Search by city or ZIP
-          </label>
-          <div className="relative flex-1">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted" aria-hidden="true" />
-            <input
-              id="search-callout-input"
-              type="search"
-              name="q"
-              placeholder="City or ZIP"
-              className="w-full bg-white border-0 rounded-md pl-12 pr-4 py-4 text-text placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-white/50"
-            />
-          </div>
-          <button
-            type="submit"
-            className="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-8 py-4 rounded-md hover:bg-surface transition"
+        {cta && (
+          <a
+            data-payload-subfield="body"
+            href="/search"
+            className="mt-4 inline-flex items-center justify-center h-10 bg-primary text-white text-lg font-bold px-6 rounded-full hover:opacity-90 transition" data-role="cta"
           >
-            Find a unit
-            <ArrowRight className="h-4 w-4" />
-          </button>
-        </form>
+            {cta}
+          </a>
+        )}
       </div>
     </section>
   );

@@ -123,7 +123,7 @@ export function SizeGuide({
                   alt={`${active.name} storage unit`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-cover" data-role="media"
                 />
               </div>
             )}

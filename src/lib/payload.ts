@@ -34,6 +34,23 @@ export interface PayloadPost {
   updatedAt: string;
 }
 
+/** A CTA/link on an enriched block (e.g. button rows, link lists). */
+export interface PayloadBlockLink {
+  label?: string | null;
+  url?: string | null;
+  appearance?: string | null;
+}
+
+/** A repeating entry on an enriched block (feature/step/stat lists). `text`
+ *  is rich text (its own Lexical root), distinct from the plain-string fields. */
+export interface PayloadBlockItem {
+  icon?: string | null;
+  label?: string | null;
+  text?: LexicalRoot | null;
+  link?: PayloadBlockLink | null;
+  media?: PayloadMedia | string | null;
+}
+
 /** Atomic block shape — every block on a Page is one of these. Fields are
  *  optional; each renderer reads only the subset it needs. Visual variants
  *  are distinguished by `blockType` (the slug) and resolved to a component
@@ -46,6 +63,11 @@ export interface PayloadAtomicBlock {
   body?: LexicalRoot | null;
   media?: PayloadMedia | string | null;
   mediaArray?: (PayloadMedia | string)[] | null;
+  // enriched (all optional; renderers consume in Plans 3-6)
+  items?: PayloadBlockItem[] | null;
+  links?: PayloadBlockLink[] | null;
+  rating?: number | null;
+  settings?: { variant?: string; align?: string; background?: string; columns?: string } | null;
 }
 
 export interface PayloadPage {
@@ -82,6 +104,9 @@ export interface PayloadLocation {
    * returning null keeps the page rendering editorial-only.
    */
   fmsKey?: string;
+  /** Google Place ID (legacy `facility.googlePlaceId`) — drives live Google
+   *  reviews + place links. Absent when the legacy facility had none. */
+  googlePlaceId?: string | null;
   city?: string;
   state?: string;
   address?: {
@@ -256,9 +281,21 @@ function isNavConfig(v: unknown): v is NavConfig {
  * collection `read` to the api user's own tenant, so the list returns exactly
  * one doc — this site's tenant.
  */
-async function fetchTenant(): Promise<{ nav?: unknown; locationsIndexSlug?: unknown } | null> {
+async function fetchTenant(): Promise<{
+  nav?: unknown;
+  locationsIndexSlug?: unknown;
+  siteWideNotice?: unknown;
+  googleBrowserApiKey?: unknown;
+  googleServerApiKey?: unknown;
+} | null> {
   const res = await payloadFetch<
-    PayloadListResponse<{ nav?: unknown; locationsIndexSlug?: unknown }>
+    PayloadListResponse<{
+      nav?: unknown;
+      locationsIndexSlug?: unknown;
+      siteWideNotice?: unknown;
+      googleBrowserApiKey?: unknown;
+      googleServerApiKey?: unknown;
+    }>
   >(`/cms/api/tenants?limit=1&depth=0${DRAFT_QS}`);
   return res?.docs?.[0] ?? null;
 }
@@ -286,6 +323,64 @@ export async function fetchTenantNav(): Promise<NavConfig | null> {
 export async function fetchLocationsIndexSlug(): Promise<string | null> {
   const slug = (await fetchTenant())?.locationsIndexSlug;
   return typeof slug === "string" && slug.length > 0 ? slug : null;
+}
+
+/**
+ * Site-wide notice/alert text off this site's tenant (legacy `tenant.siteWideNotice`),
+ * rendered by `<NoticeBar />` below the header. Returns `null` when absent/empty or
+ * the fetch fails — the bar then renders nothing. IMPORT-dependent: until the
+ * migration carries this field, this is null and no bar shows.
+ */
+export async function fetchTenantNotice(): Promise<string | null> {
+  const notice = (await fetchTenant())?.siteWideNotice;
+  return typeof notice === "string" && notice.trim().length > 0 ? notice : null;
+}
+
+/**
+ * Browser-safe (referrer-restricted) Google Maps API key off this site's tenant
+ * (legacy `tenant.googleApiBrowserKey` → nocms `tenant.googleBrowserApiKey`).
+ * Powers the `map-locations` block's Google Map. Returns `null` when absent —
+ * the block then renders its list-only fallback (no map). IMPORT-dependent.
+ */
+export async function fetchTenantMapKey(): Promise<string | null> {
+  const key = (await fetchTenant())?.googleBrowserApiKey;
+  return typeof key === "string" && key.trim().length > 0 ? key.trim() : null;
+}
+
+/**
+ * SERVER-side Google API key off this site's tenant (`tenant.googleServerApiKey`)
+ * — used at build/render time to fetch live Google reviews. SECRET: read only in
+ * server components and NEVER passed to a client component / serialized to the
+ * browser. Returns `null` when unset (the reviews section then renders nothing).
+ */
+export async function fetchTenantServerKey(): Promise<string | null> {
+  const key = (await fetchTenant())?.googleServerApiKey;
+  return typeof key === "string" && key.trim().length > 0 ? key.trim() : null;
+}
+
+/**
+ * Header logo URL off this site's tenant's DEFAULT brand (`tenant.defaultBrand.logo`,
+ * served via nocms's own media route — not the legacy CDN). Uses the default brand
+ * specifically (a tenant may have several brands) via depth=2 on the tenant fetch.
+ * The header prefers this over the skin.config fallback. Returns `null` when there's
+ * no default brand/logo or the fetch fails.
+ */
+export async function fetchTenantLogo(): Promise<string | null> {
+  const res = await payloadFetch<
+    PayloadListResponse<{ defaultBrand?: { logo?: { url?: unknown } | string | null } | string | null }>
+  >(`/cms/api/tenants?limit=1&depth=2${DRAFT_QS}`);
+  const brand = res?.docs?.[0]?.defaultBrand;
+  const logo = brand && typeof brand === "object" ? (brand as { logo?: unknown }).logo : undefined;
+  const url =
+    typeof logo === "string"
+      ? logo
+      : logo && typeof logo === "object" && typeof (logo as { url?: unknown }).url === "string"
+        ? ((logo as { url: string }).url)
+        : undefined;
+  // Accept an absolute URL OR a relative nocms media path (`/cms/api/media/...`,
+  // how all other images render via mediaUrl). Reject a bare id (unpopulated
+  // relationship) so we never emit `<img src="<24-hex-id>">`.
+  return url && (/^https?:\/\//i.test(url) || url.startsWith("/")) ? url : null;
 }
 
 export function mediaUrl(media: PayloadMedia | string | null | undefined): string | null {

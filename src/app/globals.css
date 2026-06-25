@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
 @theme {
-  /* Theme 1 — clean storage baseline (navy + amber).
-   *  Replaced by NoCMS design brief overlay at scaffold time when a project
-   *  selects a different template. Mirrors the Theme 1 entry on the nocms side
-   *  at src/lib/templates/library.ts. */
-  --color-primary: #1B3A57;
-  --color-secondary: #4A5C6A;
-  --color-accent: #E8922C;
-  --color-background: #F7F8FA;
-  --color-surface: #FFFFFF;
-  --color-text: #0A1220;
-  --color-muted: #5E6B7A;
+  --color-primary: #1400ff;
+  --color-secondary: #6f6f6f;
+  --color-accent: #000000;
+  --color-background: #ffffff;
+  --color-surface: #fafafa;
+  --color-text: #000000;
+  --color-muted: #7c7c7c;
+  --color-primary-dark: #0e00b3;
+  --color-primary-light: #e7e5ff;
+  --color-accent-dark: #595959;
+  --color-accent-light: #f2f2f2;
+  --color-steel-light: #f2f2f2;
 
-  /* Extended palette */
-  --color-primary-dark: #0F2438;
-  --color-primary-light: #D5DEE7;
-  --color-accent-dark: #C7771A;
-  --color-accent-light: #FBE5C7;
-  --color-steel-light: #C7CED6;
-
-  --font-heading: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Proxima Nova", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Proxima Nova", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Respect OS-level reduced-motion preference (WCAG 2.3.3). */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Default keyboard-focus indicator (WCAG 2.4.7) — covers un-classed controls. */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Token-based base typography rhythm in @layer base so Tailwind utilities
+   (e.g. a block's m-0 / mb-*) reliably WIN — an unlayered rule here would beat
+   @layer utilities and silently override component margins (it did: hero h1). */
+@layer base {
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    margin-block: 0.75em 0.5em;
+  }
+
+  p {
+    margin-block: 0.5em;
+  }
+}
+
+/* Bare-token aliases + a neutral grey ramp for designPattern className
+   references (var(--primary-light), var(--neutral-300), …) that use bare
+   custom-property names rather than Tailwind's --color-* tokens. */
+:root {
+  --primary: var(--color-primary);
+  --secondary: var(--color-secondary);
+  --accent: var(--color-accent);
+  --background: var(--color-background);
+  --surface: var(--color-surface);
+  --text: var(--color-text);
+  --muted: var(--color-muted);
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-500: #6b7280;
 }

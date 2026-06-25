@@ -42,7 +42,7 @@ export function BlogArchiveMain({
         </h2>
       )}
       {posts.length === 0 ? (
-        <p role="status" className="text-zinc-600">
+        <p role="status" className="text-zinc-600" data-role="text">
           No posts found.
         </p>
       ) : (
@@ -60,18 +60,18 @@ export function BlogArchiveMain({
           {page > 1 && (
             <a
               href={`${baseHref}${page - 1}`}
-              className="px-3 py-2 rounded-md border border-zinc-300 hover:bg-zinc-50"
+              className="px-3 py-2 rounded-md border border-zinc-300 hover:bg-zinc-50" data-role="text-2"
             >
               Previous
             </a>
           )}
-          <span className="text-zinc-600">
+          <span className="text-zinc-600" data-role="text-3">
             Page {page} of {totalPages}
           </span>
           {page < totalPages && (
             <a
               href={`${baseHref}${page + 1}`}
-              className="px-3 py-2 rounded-md border border-zinc-300 hover:bg-zinc-50"
+              className="px-3 py-2 rounded-md border border-zinc-300 hover:bg-zinc-50" data-role="text-4"
             >
               Next
             </a>

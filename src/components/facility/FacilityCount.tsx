@@ -35,7 +35,7 @@ export function FacilityCount({
       data-nocms-component="facility-count"
       className={`text-xl font-bold text-text ${className}`}
     >
-      <span aria-hidden="true">{count}&nbsp;</span>
+      <span aria-hidden="true" data-role="text">{count}&nbsp;</span>
       <span data-role="heading">{label}</span>
     </div>
   );
