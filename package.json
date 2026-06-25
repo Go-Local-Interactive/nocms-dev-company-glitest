@@ -1,0 +1,27 @@
+{
+  "name": "nocms-site",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint:direct-edit": "bun run scripts/lint-direct-edit-coverage.ts"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "lucide-react": "^0.577.0",
+    "motion": "^12.0.0"
+  },
+  "devDependencies": {
+    "@react-email/components": "^1.0.12",
+    "@react-email/render": "^2.0.8",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "ts-morph": "^28.0.0",
+    "typescript": "^5.7.0"
+  }
+}

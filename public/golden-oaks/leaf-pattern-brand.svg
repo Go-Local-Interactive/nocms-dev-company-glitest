@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <g fill="none" stroke="#5F7A5E" stroke-width="1.2" stroke-linecap="round" >
+
+    <!-- Curling vine 1 — S-curve with tight curls -->
+    <path d="M0 500 Q40 460 80 440 Q140 410 180 360 Q210 320 200 270 Q190 230 220 200 Q260 170 280 200 Q300 240 280 280 Q260 310 300 340 Q350 370 400 340 Q440 310 430 260 Q420 220 460 200 Q510 180 540 220 Q570 260 600 300"/>
+    <!-- Wrap: enter left at y=300 -->
+    <path d="M0 300 Q30 340 60 360"/>
+
+    <!-- Curling vine 2 — flowing with loops -->
+    <path d="M600 100 Q560 130 520 140 Q470 150 440 190 Q420 230 440 260 Q470 290 440 320 Q400 350 360 320 Q330 290 340 240 Q350 190 310 160 Q270 130 230 160 Q200 190 210 240 Q220 280 180 300 Q130 320 90 280 Q60 240 30 260 Q0 280 0 280"/>
+    <!-- Wrap: enter right at y=280 -->
+    <path d="M600 280 Q580 270 560 260"/>
+
+    <!-- Curling vine 3 — gentle with spiral ends -->
+    <path d="M0 100 Q50 80 100 100 Q160 130 200 120 Q250 108 280 130 Q320 160 300 200 Q280 230 310 250 Q350 270 390 240 Q420 210 460 230 Q510 260 540 230 Q570 200 600 220"/>
+    <!-- Wrap: enter left at y=220 -->
+    <path d="M0 220 Q20 210 40 190"/>
+
+    <!-- Curling vine 4 — bottom area -->
+    <path d="M600 500 Q560 480 520 490 Q470 500 440 470 Q420 440 440 410 Q470 380 450 350 Q430 330 390 350 Q350 380 310 370 Q270 360 250 400 Q230 440 190 450 Q140 460 110 430 Q80 400 50 430 Q20 460 0 460"/>
+    <!-- Wrap: enter right at y=460 -->
+    <path d="M600 460 Q580 465 560 480"/>
+
+    <!-- Small floating curl top-right -->
+    <path d="M480 60 Q500 30 530 40 Q550 55 530 75 Q510 90 490 75"/>
+
+    <!-- Small floating curl bottom-left -->
+    <path d="M80 540 Q100 510 130 520 Q150 535 130 555 Q110 570 90 555"/>
+
+  </g>
+</svg>

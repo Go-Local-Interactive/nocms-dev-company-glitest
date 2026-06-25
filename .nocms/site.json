@@ -1,0 +1,10 @@
+{
+  "$schema": "./site.schema.json",
+  "fmsKeys": [],
+  "_notes": [
+    "Manifest written at scaffold time. Mirrors Project.fmsKeys on the nocms backend",
+    "but WITHOUT the apiKey field — credentials live server-side, never in the site repo.",
+    "Each entry: { fms: 'monument' | 'storedge' | 'sitelink', label?: string }.",
+    "The using-nocms-fms router reads this when project context isn't otherwise available."
+  ]
+}

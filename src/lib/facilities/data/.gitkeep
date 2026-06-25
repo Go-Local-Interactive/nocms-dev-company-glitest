@@ -1,0 +1,5 @@
+Facility data lives here, written at scaffold time by the agent's
+`fetchXFacilities` MCP tool. Each file matches the Facility shape in
+`src/types/Facility.ts`; `index.json` is the slim list used by `listFacilities()`.
+
+Do NOT hand-edit. The agent re-runs the fetch to refresh.

@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  /* Theme 1 — clean storage baseline (navy + amber).
+   *  Replaced by NoCMS design brief overlay at scaffold time when a project
+   *  selects a different template. Mirrors the Theme 1 entry on the nocms side
+   *  at src/lib/templates/library.ts. */
+  --color-primary: #1B3A57;
+  --color-secondary: #4A5C6A;
+  --color-accent: #E8922C;
+  --color-background: #F7F8FA;
+  --color-surface: #FFFFFF;
+  --color-text: #0A1220;
+  --color-muted: #5E6B7A;
+
+  /* Extended palette */
+  --color-primary-dark: #0F2438;
+  --color-primary-light: #D5DEE7;
+  --color-accent-dark: #C7771A;
+  --color-accent-light: #FBE5C7;
+  --color-steel-light: #C7CED6;
+
+  --font-heading: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
